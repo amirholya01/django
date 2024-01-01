@@ -1,0 +1,60 @@
+{% load i18n %}
+
+{% with request.resolver_match.url_name as url_name %}
+    <div class="col-lg-3 col-md-3">
+        <div class="dashboard-navbar">
+
+            <div class="d-user-avater">
+                <img src="{{ user.get_user_avatar }}" class="img-fluid avater" alt="">
+                <h4>{{ user }}</h4>
+                {% if user.mobile %}
+                    <span>{{ user.mobile }}</span>
+                {% endif %}
+            </div>
+
+            <div class="d-navigation">
+                <ul id="side-menu">
+                    <li class="{% if url_name == 'user_dashboard_page' %}active{% endif %}">
+                        <a href="{% url 'user_dashboard_page' %}">
+                            <i class="ti-user"></i>{% trans 'Dashboard' %}
+                        </a>
+                    </li>
+                    <li class="{% if url_name == 'change_pass_page' %}active{% endif %}">
+                        <a href="{% url 'change_pass_page' %}">
+                            <i class="ti-lock"></i>{% trans 'Change password' %}
+                        </a>
+                    </li>
+                    <li class="{% if url_name == 'change_user_info_page' %}active{% endif %}">
+                        <a href="{% url 'change_user_info_page' %}">
+                            <i class="ti-user"></i>{% trans 'Change user info' %}
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a>
+                            <i class="ti-layers"></i>
+                            {% trans 'Tickets' %}
+                            <span class="ti-angle-right"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li class="{% if url_name == 'tickets_page' %}active{% endif %}">
+                                <a href="{% url 'tickets_page' %}">{% trans 'Tickets list' %}</a>
+                            </li>
+                            <li class="{% if url_name == 'add_new_ticket_page' %}active{% endif %}">
+                                <a href="{% url 'add_new_ticket_page' %}">{% trans 'Add new ticket' %}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="{% if url_name == 'user_wallets_page' %}active{% endif %}">
+                        <a href="{% url 'user_wallets_page' %}">
+                            <i class="ti-money"></i>{% trans 'My wallet' %}
+                        </a>
+                    </li>
+                    <li><a href="{% url 'logout_page' %}"><i class="ti-power-off"></i>{% trans 'Exit' %}</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+{% endwith %}

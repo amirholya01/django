@@ -1,0 +1,27 @@
+{% load i18n %}
+{% get_current_language as CURRENT_LANG %}
+{% load static %}
+
+{% if CURRENT_LANG == 'fa' %}
+    <script src="{% static 'site/rtl/js/jquery.min.js' %}"></script>
+    <script src="{% static 'site/rtl/js/popper.min.js' %}"></script>
+    <script src="{% static 'site/rtl/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'site/rtl/js/slick.js' %}"></script>
+    <script src="{% static 'site/rtl/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'site/rtl/js/counterup.min.js' %}"></script>
+    <script src="{% static 'site/rtl/js/custom.js' %}"></script>
+    <script src="{% static 'site/rtl/js/metisMenu.min.js' %}"></script>
+    <script src="{% static 'lib/toastr/toastr.min.js' %}"></script>
+    <script src="{% static 'custom/rtl/custom.js' %}"></script>
+{% else %}
+    <script src="{% static 'site/ltr/js/jquery.min.js' %}"></script>
+    <script src="{% static 'site/ltr/js/popper.min.js' %}"></script>
+    <script src="{% static 'site/ltr/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'site/ltr/js/slick.js' %}"></script>
+    <script src="{% static 'site/ltr/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'site/ltr/js/counterup.min.js' %}"></script>
+    <script src="{% static 'site/ltr/js/custom.js' %}"></script>
+    <script src="{% static 'site/ltr/js/metisMenu.min.js' %}"></script>
+    <script src="{% static 'lib/toastr/toastr.min.js' %}"></script>
+    <script src="{% static 'custom/ltr/custom.js' %}"></script>
+{% endif %}

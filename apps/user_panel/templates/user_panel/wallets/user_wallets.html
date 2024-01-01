@@ -1,0 +1,129 @@
+{% extends 'shared/user_layout.html' %}
+{% load static %}
+{% load currency_filter %}
+{% load jalali_date_filter %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'My wallet' %}
+{% endblock %}
+
+{% block header_references %}
+    <link rel="stylesheet" href="{% static 'lib/kamadatepicker/kamadatepicker.css' %}">
+{% endblock %}
+
+{% block footer_references %}
+    <script src="{% static 'lib/kamadatepicker/kamadatepicker.js' %}"></script>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'user_wallets_page' %}">{% trans 'Wallet' %}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans 'My wallet transactions' %}</li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="dashboard_container">
+                <div class="dashboard_container_header">
+                    <div class="dashboard_fl_1">
+                        <h4>{% trans 'All transactions list' %}</h4>
+                    </div>
+                </div>
+                <div class="dashboard_container_body pl-3 pr-3 mt-3">
+                    <form action="{% url 'user_wallets_page' %}" method="get" id="filter-form">
+                        <input type="hidden" name="page" value="{{ page_obj.number }}" id="page-number">
+                        <br>
+                        {% if current_language == 'fa' %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="start_date">{% trans 'Start date' %}</label>
+                                        <input type="text" autocomplete="off" date-picker value="{{ filter_items.start_date }}" name="start_date" id="start_date" placeholder="{% trans 'Start date' %}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="end_date">{% trans 'End date' %}</label>
+                                        <input type="text" autocomplete="off" date-picker value="{{ filter_items.end_date }}" name="end_date" id="end_date" placeholder="{% trans 'End date' %}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="start_date">{% trans 'Start date' %}</label>
+                                        <input type="date" value="{{ filter_items.start_date }}" name="start_date" id="start_date" placeholder="{% trans 'Start date' %}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="end_date">{% trans 'End date' %}</label>
+                                        <input type="date" value="{{ filter_items.end_date }}" name="end_date" id="end_date" placeholder="{% trans 'End date' %}" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group mt-4">
+                                    <button class="btn btn-success btn-block">{% trans 'Search' %}</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mt-4">
+                                    <a href="{% url 'user_charge_wallet_page' %}" class="btn btn-dark btn-block">{% trans 'Charge wallet' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    {% if page_obj.object_list %}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">{% trans 'Price' %}</th>
+                                    <th scope="col">{% trans 'Transaction type' %}</th>
+                                    <th scope="col">{% trans 'Transaction for' %}</th>
+                                    <th scope="col">{% trans 'Payment date' %}</th>
+                                    <th scope="col">{% trans 'Tracking code' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for item in page_obj.object_list %}
+                                    <tr>
+                                        <td>{{ item.price|three_digits_currency }}</td>
+                                        <td>{{ item.get_transaction_type_display }}</td>
+                                        <td>{{ item.get_transaction_for_display }}</td>
+                                        <td>{{ item.payment_date|show_jalali_date }} - {{ item.payment_date|time }}</td>
+                                        <td>
+                                            {% if item.tracking_code %}
+                                                <span>{{ item.tracking_code }}</span>
+                                            {% else %}
+                                                <span>{% trans 'Not set' %}</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                            {% include 'user_panel/shared/user_paging_partial.html' with paginator=paginator page_obj=page_obj %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if not page_obj.object_list %}
+                    {% include 'user_panel/shared/user_not_fount_partial.html' %}
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load jalali_date_filter %}
+{% load i18n %}
+
+<div class="list-single-main-item fl-wrap">
+    {% comment %}<div class="list-single-main-item-title fl-wrap">
+        <h3>تاکنون <span> 3 </span> دیدگاه ثبت شده است!</h3>
+    </div>{% endcomment %}
+    {% if comments %}
+        <div class="reviews-comments-wrap">
+            {% for comment in comments %}
+                <!-- reviews-comments-item -->
+                <div class="reviews-comments-item">
+                    <div class="review-comments-avatar">
+                        <img src="{{ comment.user.get_user_avatar }}" class="img-fluid" alt="{{ comment.user }}">
+                    </div>
+                    <div class="reviews-comments-item-text">
+                        <h4>
+                            <a href="javascript:void(0)">{{ comment.user }}</a>
+                            <span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i>{{ comment.create_date|show_jalali_date }}</span>
+                            <span class="reviews-comments-item-date mr-2 ml-2 cursor-pointer" onclick="FillCourseCommentParentId({{ comment.id }})"><i class="ti-arrow-circle-up theme-cl"></i>{% trans 'Answer' %}</span>
+                        </h4>
+
+                        {% comment %}<div class="listing-rating high" data-starrating2="5">
+                                                                <i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><span class="review-count">4.9</span>
+                                                            </div>{% endcomment %}
+                        <div class="clearfix"></div>
+                        {{ comment.text|safe }}
+                        {% comment %}<div class="pull-left reviews-reaction">
+                            <a href="#" class="comment-like active"><i class="ti-thumb-up"></i>
+                                12</a>
+                            <a href="#" class="comment-dislike active"><i class="ti-thumb-down"></i>
+                                1</a>
+                            <a href="#" class="comment-love active"><i class="ti-heart"></i> 07</a>
+                        </div>{% endcomment %}
+                    </div>
+                </div>
+                <!--reviews-comments-item end-->
+                {% if comment.sub_comments.all %}
+                    {% for sub_comment in comment.sub_comments.all %}
+                        <!-- reviews-comments-item -->
+                        <div class="reviews-comments-item sub-comment">
+                            <div class="review-comments-avatar">
+                                <img src="{{ sub_comment.user.get_user_avatar }}" class="img-fluid" alt="{{ sub_comment.user }}">
+                            </div>
+                            <div class="reviews-comments-item-text">
+                                <h4>
+                                    <a href="javascript:void(0)">{{ sub_comment.user }}</a><span class="reviews-comments-item-date"><i class="ti-calendar theme-cl"></i>{{ sub_comment.create_date|show_jalali_date }}</span>
+                                </h4>
+                                {% comment %}<div class="listing-rating high" data-starrating2="5">
+                                    <i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><i class="ti-star active"></i><span class="review-count">4.9</span>
+                                </div>{% endcomment %}
+                                <div class="clearfix"></div>
+                                {{ sub_comment.text|safe }}
+                                {% comment %}<div class="pull-left reviews-reaction">
+                                    <a href="#" class="comment-like active"><i class="ti-thumb-up"></i>
+                                        12</a>
+                                    <a href="#" class="comment-dislike active"><i class="ti-thumb-down"></i>
+                                        1</a>
+                                    <a href="#" class="comment-love active"><i class="ti-heart"></i> 07</a>
+                                </div>{% endcomment %}
+                            </div>
+                        </div>
+                        <!--reviews-comments-item end-->
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning">
+            <p>{% trans 'There is no comment' %}</p>
+        </div>
+    {% endif %}
+</div>

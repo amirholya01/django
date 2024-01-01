@@ -1,0 +1,23 @@
+.django-ckeditor-widget {
+    width: 100%;
+}
+
+.dir-rtl {
+    direction: rtl;
+}
+
+.dir-ltr {
+    direction: ltr;
+}
+
+.reviews-comments-item.sub-comment {
+    padding-left: 170px;
+}
+
+.sub-comment .review-comments-avatar {
+    left: 80px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

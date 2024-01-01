@@ -1,0 +1,82 @@
+{% load i18n %}
+{% get_current_language as CURRENT_LANG %}
+
+<div class="header header-light">
+    <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape">
+            <div class="nav-header">
+                {% if site_setting.site_header_logo %}
+                    <a class="nav-brand" href="{% url 'home_page' %}">
+                        <img src="{{ site_setting.site_header_logo.url }}" class="logo" alt="{{ site_setting.site_name }}"/>
+                    </a>
+                {% endif %}
+                <div class="nav-toggle"></div>
+            </div>
+            <div class="nav-menus-wrapper" style="transition-property: none;">
+                <ul class="nav-menu">
+                    {% for link in links %}
+                        <li>
+                            <a href="{{ link.url }}">
+                                {{ link.title }}
+                                {% if link.dynamiclink_set.all %}
+                                    <span class="submenu-indicator"></span>
+                                {% endif %}
+                            </a>
+                            {% if link.dynamiclink_set.all %}
+                                <ul class="nav-dropdown nav-submenu">
+                                    {% for sub_link in link.dynamiclink_set.all %}
+                                        <li>
+                                            <a href="{{ sub_link.url }}">
+                                                {{ sub_link.title }}
+                                                {% if sub_link.dynamiclink_set.all %}
+                                                    <span class="submenu-indicator"></span>
+                                                {% endif %}
+                                            </a>
+                                            {% if sub_link.dynamiclink_set.all %}
+                                                <ul class="nav-dropdown nav-submenu">
+                                                    {% for second_sub in sub_link.dynamiclink_set.all %}
+                                                        <li><a href="{{ second_sub.url }}">{{ second_sub.title }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+
+                    {% if request.user.is_superuser %}
+                        <li>
+                            <a href="javascript:void(0)">{% trans 'Super user options' %}</a>
+                            <span class="submenu-indicator"></span>
+                            <ul class="nav-dropdown nav-submenu">
+                                <li><a href="/admin">{% trans 'Admin' %}</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+
+                <ul class="nav-menu nav-menu-social {% if CURRENT_LANG == 'en' %}align-to-right{% else %}align-to-left{% endif %}">
+                    {% if not request.user.is_authenticated %}
+                        <li class="login_click green light">
+                            <a href="{% url 'login_page' %}">{% trans 'Login' %}</a>
+                        </li>
+                        <li class="login_click bg-green">
+                            <a href="{% url 'register_page' %}">{% trans 'Register' %}</a>
+                        </li>
+                    {% else %}
+                        <li class="login_click green light">
+                            <a href="{% url 'logout_page' %}">{% trans 'Exit' %}</a>
+                        </li>
+                        <li class="login_click bg-green">
+                            <a href="{% url 'user_dashboard_page' %}">{% trans 'User panel' %}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="clearfix"></div>

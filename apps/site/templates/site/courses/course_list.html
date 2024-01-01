@@ -1,0 +1,219 @@
+{% extends 'shared/layout.html' %}
+{% load i18n currency_filter time_filter %}
+
+{% block title %}
+    {% trans 'Courses' %}
+{% endblock %}
+
+{% block content %}
+    <!-- ============================ Page Title Start================================== -->
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <div class="breadcrumbs-wrap">
+                        <h1 class="breadcrumb-title">{% trans 'Courses list' %}</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% trans 'Courses' %}</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Page Title End ================================== -->
+
+
+    <!-- ============================ Find Courses with Sidebar ================================== -->
+    <section class="pt-0">
+        <div class="container">
+
+            <form action="{% url 'courses_list_page' %}" method="get" id="filter-form">
+                <input type="hidden" value="{{ page_obj.number }}" name="page" id="page-number">
+
+                <!-- Row -->
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-12 col-sm-12 order-2 order-lg-1 order-md-2">
+                        <div class="page_sidebar">
+
+                            <!-- Search Form -->
+                            <div class="form-inline addons mb-3">
+                                <input class="form-control" name="title" type="search"
+                                        placeholder="{% trans 'Search course' %}"
+                                        value="{% if filter_items.title %}{{ filter_items.title }}{% endif %}"
+                                        aria-label="Search">
+                                <button class="btn my-2 my-sm-0" type="submit"><i class="ti-search"></i></button>
+                            </div>
+
+                            <h4 class="side_title">{% trans 'Course categories' %}</h4>
+                            <ul class="no-ul-list mb-3">
+                                {% for category in categories %}
+                                    <li>
+                                        <input {% if category.url_title in filter_items.categories %}checked{% endif %}
+                                                submit-onchange=""
+                                                id="main-cat-{{ category.id }}" class="checkbox-custom"
+                                                name="categories" type="checkbox" value="{{ category.url_title }}">
+
+                                        <label for="main-cat-{{ category.id }}"
+                                                class="checkbox-custom-label font-bold">{{ category.title }}
+                                            ({{ category.courses_count }})</label>
+                                        {% if category.coursecategory_set.all %}
+                                            <ul class="no-ul-list">
+                                                {% for sub_category in category.coursecategory_set.all %}
+                                                    <li>
+                                                        <input
+                                                                {% if sub_category.url_title in filter_items.categories %}checked{% endif %}
+                                                                id="main-cat-{{ sub_category.id }}"
+                                                                class="checkbox-custom"
+                                                                name="categories" type="checkbox"
+                                                                submit-onchange=""
+                                                                value="{{ sub_category.url_title }}">
+
+                                                        <label for="main-cat-{{ sub_category.id }}"
+                                                                class="checkbox-custom-label">{{ sub_category.title }}
+                                                            ({{ sub_category.courses_count }})</label>
+
+                                                    </li>
+                                                {% endfor %}
+
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <h4 class="side_title">{% trans 'Course levels' %}</h4>
+                            <ul class="no-ul-list mb-3">
+                                {% for course_level in course_levels %}
+                                    <li>
+                                        <input id="course-level-{{ course_level.id }}"
+                                                {% if course_level.url_title in filter_items.course_levels %}checked{% endif %}
+                                                class="checkbox-custom"
+                                                submit-onchange="true"
+                                                value="{{ course_level.url_title }}"
+                                                name="course_levels" type="checkbox">
+                                        <label for="course-level-{{ course_level.id }}"
+                                                class="checkbox-custom-label">
+                                            {{ course_level.title }} ({{ course_level.courses_count }})
+                                        </label>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 col-md-12 col-sm-12 order-1 order-lg-2 order-md-1">
+
+                        <!-- Row -->
+                        <div class="row align-items-center mb-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <strong>{{ paginator.count }}</strong> {% trans 'Courses found' %}
+                            </div>
+                            {% comment %}<div class="col-lg-6 col-md-6 col-sm-12 ordering">
+                                <div class="filter_wraps">
+                                    <div class="dn db-991 mt30 mb0 show-23">
+                                        <div id="main2">
+                                            <a href="javascript:void(0)" class="btn btn-theme arrow-btn filter_open"
+                                               onclick="openNav()" id="open2"><span><i
+                                                    class="fas fa-arrow-alt-circle-right"></i></span>باکس فیلتر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>{% endcomment %}
+                        </div>
+                        <!-- /Row -->
+
+                        {% if page_obj.object_list %}
+                            <div class="row">
+                                {% for course in page_obj.object_list %}
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="education_block_grid style_2">
+                                            <div class="education_block_thumb n-shadow">
+                                                <a href="{{ course.get_detail_url }}">
+                                                    <img src="{{ course.image.url }}"
+                                                            class="img-fluid"
+                                                            alt="{{ course.title }}"></a>
+                                            </div>
+                                            <div class="education_block_body">
+                                                <h4 class="bl-title">
+                                                    <a href="{{ course.get_detail_url }}">{{ course.title }}</a></h4>
+                                            </div>
+
+                                            <div class="cources_info">
+                                                <div class="cources_info_first">
+                                                    <ul>
+                                                        <li>
+                                                            <strong>{{ course.visit_count }} {% trans 'Visit' %}</strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="cources_info_last">
+                                                    <h3>{{ course.get_course_price_display }}</h3>
+                                                </div>
+                                            </div>
+
+                                            <div class="education_block_footer">
+                                                <div class="education_block_author">
+                                                    <div class="path-img">
+                                                        <a href="instructor-detail.html">
+                                                            <img src="{{ course.main_master.user.get_user_avatar }}"
+                                                                    class="img-fluid"
+                                                                    alt=""></a>
+                                                    </div>
+                                                    <h5>
+                                                        <a href="instructor-detail.html">{{ course.main_master.user }}</a>
+                                                    </h5>
+                                                </div>
+                                                <span class="education_block_time">
+                                            <i class="ti-alarm-clock ml-1"></i>
+                                                    {% if course.total_section_duration %}
+                                                        {{ course.total_section_duration|convert_minutes_to_time }}
+                                                    {% else %}
+                                                        00:00
+                                                    {% endif %}
+                                        </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {% include 'shared/not_found.html' %}
+                        {% endif %}
+
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                                <!-- Pagination -->
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        {% include 'shared/paging_partial.html' %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /Row -->
+
+                    </div>
+
+                </div>
+                <!-- Row -->
+
+            </form>
+        </div>
+    </section>
+    <!-- ============================ Find Courses with Sidebar End ================================== -->
+
+{% endblock %}

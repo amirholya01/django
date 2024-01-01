@@ -1,0 +1,227 @@
+{% extends 'shared/layout.html' %}
+{% load render_partial %}
+{% load i18n %}
+{% load jalali_date_filter %}
+{% get_current_language as CURRENT_LANG %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block footer_references %}
+    {% include 'shared/ckeditor_scripts.html' %}
+{% endblock %}
+
+{% block body_class %}blog-page{% endblock %}
+
+{% block content %}
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <div class="breadcrumbs-wrap">
+                        <h1 class="breadcrumb-title">{{ article.title }}</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                                <li class="breadcrumb-item">
+                                    <a href="{% url 'articles_list_page' %}">{% trans 'Articles list' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {{ article.title }}
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Agency List Start ================================== -->
+    <section class="gray">
+
+        <div class="container">
+
+            <!-- row Start -->
+            <div class="row">
+
+                <!-- Blog Detail -->
+                <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                    <div class="article_detail_wrapss single_article_wrap format-standard">
+                        <div class="article_body_wrap">
+
+                            <div class="article_featured_image">
+                                <img class="img-fluid w-100" src="{{ article.image.url }}" alt="{{ article.title }}">
+                            </div>
+
+                            <div class="article_top_info">
+                                <ul class="article_middle_info">
+                                    <li>
+                                        <a>
+                                            <span class="icons">
+                                                <i class="ti-user"></i>
+                                            </span>
+                                            {{ article.author.get_full_name }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icons">
+                                                <i class="ti-comment-alt"></i>
+                                            </span>
+                                            ({{ comments_count }}) {% trans 'Comments' %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2 class="post-title">{{ article.title }}</h2>
+                            {{ article.text|safe }}
+                        </div>
+                    </div>
+
+                    <!-- Author Detail -->
+                    <div class="article_detail_wrapss single_article_wrap format-standard">
+
+                        <div class="article_posts_thumb">
+                            <span class="img">
+                                <img class="img-fluid" src="{{ article.author.get_user_avatar }}" alt=""></span>
+                            <h3 class="pa-name">{{ article.author.get_full_name }}</h3>
+                            {% if article.author.description %}
+                                <p class="pa-text">{{ article.author.description }}</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <!-- Blog Comment -->
+                    <div class="article_detail_wrapss single_article_wrap format-standard">
+
+                        <div class="comment-area">
+                            <div class="all-comments">
+                                <h3 class="comments-title">({{ comments_count }}) {% trans 'Comments' %}</h3>
+                                <div class="comment-list">
+                                    {% if comments %}
+                                        <ul>
+                                            {% for comment in comments %}
+                                                <li class="article_comments_wrap">
+                                                    <article>
+                                                        <div class="article_comments_thumb">
+                                                            <img src="{{ comment.sender.get_user_avatar }}" alt="">
+                                                        </div>
+                                                        <div class="comment-details">
+                                                            <div class="comment-meta">
+                                                                <div class="comment-left-meta">
+                                                                    <h4 class="author-name">
+                                                                        {{ comment.sender.get_full_name }}
+                                                                        <span class="selected">
+                                                                            <i class="fas fa-bookmark"></i>
+                                                                        </span>
+                                                                    </h4>
+                                                                    <div class="comment-date">{{ comment.create_date|show_jalali_date }}</div>
+                                                                </div>
+                                                                <div class="comment-reply">
+                                                                    <a class="reply"
+                                                                       onclick="sendNewAnswerToArticleComment({{ comment.id }})">
+                                                                        <span class="icona">
+                                                                            <i class="ti-back-right"></i>
+                                                                        </span>
+                                                                        {% trans 'Answer' %}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment-text">
+                                                                <p>{{ comment.text|safe }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    {% if comment.articlecomment_set %}
+                                                        <ul class="children">
+                                                            {% for sub_comment in comment.articlecomment_set.all %}
+                                                                <li class="article_comments_wrap">
+                                                                    <article>
+                                                                        <div class="article_comments_thumb">
+                                                                            <img src="{{ sub_comment.sender.get_user_avatar }}"
+                                                                                 alt="">
+                                                                        </div>
+                                                                        <div class="comment-details">
+                                                                            <div class="comment-meta">
+                                                                                <div class="comment-left-meta">
+                                                                                    <h4 class="author-name">
+                                                                                        {{ sub_comment.sender.get_full_name }}
+                                                                                        <span class="selected"><i
+                                                                                                class="fas fa-bookmark"></i></span>
+                                                                                    </h4>
+                                                                                    <div class="comment-date">{{ sub_comment.create_date|show_jalali_date }}</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment-text">
+                                                                                <p>{{ sub_comment.text|safe }}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </article>
+                                                                </li>
+                                                            {% endfor %}
+
+                                                        </ul>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="comment-box submit-form" id="submit-new-comment">
+                                <h3 class="reply-title">{% trans 'Add new comment' %}</h3>
+                                <div class="comment-form">
+                                    <form action="{% url 'add_article_comment_page' article_id=article.id %}"
+                                          method="post">
+                                        {% csrf_token %}
+                                        {{ comment_form.parent_id }}
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    {{ comment_form.text }}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="form-group">
+                                                    <button type="submit"
+                                                            class="btn search-btn">{% trans 'Submit' %}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Single blog Grid -->
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+
+                    {% render_partial 'apps.site.views.components.article_most_visited' %}
+
+                    <!-- Tags Cloud -->
+                    <div class="single_widgets widget_tags">
+                        <h4 class="title">{% trans 'Short link' %}</h4>
+                        <p class="dir-ltr">
+                            <a href="{% url 'articles_short_link_page' article_id=article.id %}">
+                                {{ current_domain }}{% url 'articles_short_link_page' article_id=article.id %}</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /row -->
+
+        </div>
+
+    </section>
+{% endblock %}

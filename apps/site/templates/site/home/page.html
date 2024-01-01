@@ -1,0 +1,43 @@
+{% extends 'shared/layout.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ page.title }}
+{% endblock %}
+
+{% block content %}
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="breadcrumbs-wrap">
+                        <h1 class="breadcrumb-title">{{ page.title }}</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="prc_wrap">
+                        <div class="prc_wrap_header">
+                            <h4 class="property_block_title">{{ page.title }}</h4>
+                        </div>
+                        <div class="p-3">
+                            {{ page.text|safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

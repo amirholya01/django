@@ -1,0 +1,10 @@
+{% load i18n %}
+{% get_available_languages as Languages %}
+{% get_current_language_bidi as bidi %}
+{% get_current_language as current_lang %}
+
+<script>
+    {% for message in messages %}
+        ShowMessage('{{ message.tags }}', '{{ message }}', '{{ current_lang }}');
+    {% endfor %}
+</script>

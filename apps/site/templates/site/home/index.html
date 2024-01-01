@@ -1,0 +1,194 @@
+{% extends 'shared/layout.html' %}
+{% load i18n thumbnail currency_filter time_filter %}
+
+{% block title %}
+    {% trans 'Home page' %}
+{% endblock %}
+
+{% block content %}
+    <!-- ============================ Hero Banner  Start================================== -->
+    <div class="image-cover half_banner" style="background:#0b2248 url(/static/site/rtl/img/banner-1.jpg) no-repeat;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="banner-search-2">
+                        <h1 class="cl_2 mb-0">Learn on your<br>schedule</h1>
+                        <p>Study any topic, anytime. Choose from thousands of expert-led courses now.</p>
+                        <form action="{% url 'courses_list_page' %}" method="get">
+                            <div class="input-group mt-3">
+                                <input type="text" name="title" class="form-control"
+                                       placeholder="What do you want to learn?">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <img src="/static/site/rtl/img/color-search.svg" class="search-icon" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================ Hero Banner End ================================== -->
+
+    <!-- ========================== Featured Category Section =============================== -->
+    <section class="bg-light">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <p>Popular Category</p>
+                        <h2><span class="theme-cl">Hot &amp; Popular</span> Category For Learn</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for category in categories %}
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="edu_cat_2 cat-{{ forloop.counter }}">
+                            <div class="edu_cat_icons">
+                                <a class="pic-main" href="#">
+                                    {% thumbnail category.image "64x64" crop="center" as im %}
+                                        <img src="{{ im.url }}" width="{{ im.width }}"
+                                             height="{{ im.height }}" class="img-fluid"
+                                             alt="{{ article.title }}">
+                                    {% endthumbnail %}
+                                </a>
+                            </div>
+                            <div class="edu_cat_data">
+                                <h4 class="title"><a href="#">{{ category.title }}</a></h4>
+                                <ul class="meta">
+                                    <li class="video">
+                                        <i class="ti-video-clapper"></i>
+                                        {{ category.course_set.count }} {% trans 'Course' %}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================== Featured Category Section =============================== -->
+
+    <!-- ============================ Featured Courses Start ================================== -->
+    <section class="gray min-sec">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <p>Hot &amp; Trending</p>
+                        <h2><span class="theme-cl">Recent</span> Courses by professional Instructor</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for course in courses %}
+                    <div class="col-md-4 col-sm-12">
+                        <div class="education_block_grid style_2">
+                            <div class="education_block_thumb n-shadow">
+                                <a href="{{ course.get_detail_url }}">
+                                    <img src="{{ course.image.url }}"
+                                         class="img-fluid"
+                                         alt="{{ course.title }}"></a>
+                            </div>
+                            <div class="education_block_body">
+                                <h4 class="bl-title">
+                                    <a href="{{ course.get_detail_url }}">{{ course.title }}</a></h4>
+                            </div>
+
+                            <div class="cources_info">
+                                <div class="cources_info_first">
+                                    <ul>
+                                        <li>
+                                            <strong>{{ course.visit_count }} {% trans 'Visit' %}</strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="cources_info_last">
+                                    <h3>{{ course.get_course_price_display }}</h3>
+                                </div>
+                            </div>
+
+                            <div class="education_block_footer">
+                                <div class="education_block_author">
+                                    <div class="path-img">
+                                        <a href="instructor-detail.html">
+                                            <img src="{{ course.main_master.user.get_user_avatar }}"
+                                                 class="img-fluid"
+                                                 alt=""></a>
+                                    </div>
+                                    <h5>
+                                        <a href="instructor-detail.html">{{ course.main_master.user }}</a>
+                                    </h5>
+                                </div>
+                                <span class="education_block_time">
+                                            <i class="ti-alarm-clock ml-1"></i>
+                                    {% if course.total_section_duration %}
+                                        {{ course.total_section_duration|convert_minutes_to_time }}
+                                    {% else %}
+                                        00:00
+                                    {% endif %}
+                                        </span>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Featured Courses End ================================== -->
+
+    <!-- ========================== Articles Section =============================== -->
+    <section class="bg-light min-sec">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="sec-heading center">
+                        <p>Our Story</p>
+                        <h2><span class="theme-cl">Recent</span> Articles to You</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="articles_grid_style">
+                            <div class="articles_grid_thumb">
+                                <a href="{{ article.get_article_detail_url }}">
+                                    {% thumbnail article.image "626x417" crop="center" as im %}
+                                        <img src="{{ im.url }}" width="{{ im.width }}"
+                                             height="{{ im.height }}" class="img-fluid"
+                                             alt="{{ article.title }}">
+                                    {% endthumbnail %}
+
+                                </a>
+                            </div>
+
+                            <div class="articles_grid_caption">
+                                <h4>{{ article.title }}</h4>
+                                <div class="articles_grid_author">
+                                    <div class="articles_grid_author_img">
+                                        <img src="{{ article.author.get_user_avatar }}"
+                                             class="img-fluid" alt=""></div>
+                                    <h4>{{ article.author.get_full_name }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

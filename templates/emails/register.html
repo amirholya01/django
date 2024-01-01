@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<p>
+    {% trans 'Your registration was successful. Click on the link below to activate your account' %}
+</p>
+<p>
+    <a href="{{ site_setting.domain_name }}{% url 'activate_account_page' email_active_code=user.email_active_code %}">
+        {% trans 'Activate account' %}
+    </a>
+</p>

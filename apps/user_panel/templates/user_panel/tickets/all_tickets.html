@@ -1,0 +1,75 @@
+{% extends 'shared/user_layout.html' %}
+{% load i18n %}
+{% load jalali_date_filter %}
+{% load ticket_list_style %}
+
+{% block title %}
+    {% trans 'Tickets' %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'tickets_page' %}">{% trans 'Tickets' %}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans 'User tickets' %}</li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <form action="{% url 'tickets_page' %}" method="get" id="filter-form">
+            <input type="hidden" name="page" value="{{ page_obj.number }}" id="page-number">
+        </form>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="dashboard_container">
+                <div class="dashboard_container_header">
+                    <div class="dashboard_fl_1">
+                        <h4>{% trans 'All tickets list' %}</h4>
+                    </div>
+                </div>
+                <div class="dashboard_container_body">
+                    {% if ticket_list %}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">{% trans 'Code' %}</th>
+                                    <th scope="col">{% trans 'Title' %}</th>
+                                    <th scope="col">{% trans 'Create data' %}</th>
+                                    <th scope="col">{% trans 'Status' %}</th>
+                                    <th scope="col">{% trans 'Operations' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for ticket in object_list %}
+                                    <tr>
+                                        <th scope="row">{{ ticket.id }}</th>
+                                        <td>{{ ticket.title }}</td>
+                                        <td>{{ ticket.create_date|show_jalali_date }}</td>
+                                        <td>
+                                            <span class="payment_status {{ ticket.ticket_state|show_ticket_state }}">
+                                                {{ ticket.get_ticket_state_display }}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="dash_action_link">
+                                                <a href="{% url 'ticket_detail_page' ticket_id=ticket.id %}"
+                                                   class="view">{% trans 'Show Detail' %}</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                            {% include 'user_panel/shared/user_paging_partial.html' with paginator=paginator page_obj=page_obj %}
+                        </div>
+                    {% else %}
+                        {% include 'user_panel/shared/user_not_fount_partial.html' %}
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

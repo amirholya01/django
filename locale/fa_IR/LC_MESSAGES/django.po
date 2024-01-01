@@ -1,0 +1,1457 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-02 00:02+0330\n"
+"PO-Revision-Date: 2022-10-01 23:35+0326\n"
+"Last-Translator: Mohammad Ordookhani <mohammad1375ordo@gmail.com>\n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\apps\admin_panel\apps.py:8
+msgid "Main project"
+msgstr "پروژه اصلی"
+
+#: .\apps\admin_panel\models\article_models.py:16
+#: .\apps\admin_panel\models\article_models.py:47
+#: .\apps\admin_panel\models\article_models.py:81
+#: .\apps\admin_panel\models\courses_models.py:22
+#: .\apps\admin_panel\models\courses_models.py:52
+#: .\apps\admin_panel\models\courses_models.py:126
+#: .\apps\admin_panel\models\courses_models.py:177
+#: .\apps\admin_panel\models\courses_models.py:213
+#: .\apps\admin_panel\models\courses_models.py:241
+#: .\apps\admin_panel\models\courses_models.py:262
+#: .\apps\admin_panel\models\courses_models.py:353
+#: .\apps\admin_panel\models\site_setting_models.py:48
+#: .\apps\admin_panel\models\site_setting_models.py:76
+#: .\apps\admin_panel\models\ticket_models.py:40
+#: .\apps\site\templates\site\articles\article_detail.html:243
+#: .\apps\user_panel\forms\tickets.py:22
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:36
+msgid "Title"
+msgstr "عنوان"
+
+#: .\apps\admin_panel\models\article_models.py:17
+#: .\apps\admin_panel\models\courses_models.py:23
+#: .\apps\admin_panel\models\courses_models.py:53
+#: .\apps\admin_panel\models\site_setting_models.py:77
+msgid "Url title"
+msgstr "عنوان URL"
+
+#: .\apps\admin_panel\models\article_models.py:18
+#: .\apps\admin_panel\models\courses_models.py:27
+#: .\apps\admin_panel\models\courses_models.py:132
+#: .\apps\admin_panel\models\courses_models.py:214
+#: .\apps\admin_panel\models\master_models.py:21
+#: .\apps\admin_panel\models\user_models.py:30
+#: .\apps\admin_panel\models\wallet_models.py:88
+msgid "Description"
+msgstr "توضیحات"
+
+#: .\apps\admin_panel\models\article_models.py:19
+#: .\apps\admin_panel\models\article_models.py:51
+#: .\apps\admin_panel\models\courses_models.py:25
+#: .\apps\admin_panel\models\courses_models.py:129
+msgid "Image"
+msgstr "تصویر"
+
+#: .\apps\admin_panel\models\article_models.py:20
+#: .\apps\admin_panel\models\article_models.py:59
+#: .\apps\admin_panel\models\article_models.py:122
+#: .\apps\admin_panel\models\courses_models.py:30
+#: .\apps\admin_panel\models\courses_models.py:142
+#: .\apps\admin_panel\models\courses_models.py:222
+#: .\apps\admin_panel\models\courses_models.py:335
+#: .\apps\admin_panel\models\site_setting_models.py:54
+msgid "Is deleted"
+msgstr "حذف شده / نشده"
+
+#: .\apps\admin_panel\models\article_models.py:28
+msgid "Article category"
+msgstr "دسته بندی مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:29
+#: .\apps\site\templates\site\components\article_categories.html:4
+msgid "Article categories"
+msgstr "دسته بندی های مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:48
+msgid "Article slug field"
+msgstr "لینک url مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:49
+#: .\apps\admin_panel\models\courses_models.py:26
+#: .\apps\admin_panel\models\courses_models.py:131
+msgid "Short description"
+msgstr "توضیحات کوتاه"
+
+#: .\apps\admin_panel\models\article_models.py:50
+#: .\apps\admin_panel\models\article_models.py:119
+#: .\apps\admin_panel\models\contact_us_models.py:16
+#: .\apps\admin_panel\models\courses_models.py:334
+#: .\apps\admin_panel\models\site_setting_models.py:78
+#: .\apps\admin_panel\models\ticket_models.py:71
+#: .\apps\site\forms\article.py:16 .\apps\site\forms\contact.py:46
+#: .\apps\site\forms\courses_form.py:13
+msgid "Text"
+msgstr "متن"
+
+#: .\apps\admin_panel\models\article_models.py:52
+#: .\apps\admin_panel\models\article_models.py:121
+#: .\apps\admin_panel\models\contact_us_models.py:19
+#: .\apps\admin_panel\models\courses_models.py:138
+#: .\apps\admin_panel\models\courses_models.py:223
+#: .\apps\admin_panel\models\courses_models.py:297
+#: .\apps\admin_panel\models\courses_models.py:333
+#: .\apps\admin_panel\models\courses_models.py:377
+#: .\apps\admin_panel\models\ticket_models.py:45
+#: .\apps\admin_panel\models\ticket_models.py:70
+#: .\apps\admin_panel\models\wallet_models.py:86
+msgid "Create date"
+msgstr "تاریخ ایجاد"
+
+#: .\apps\admin_panel\models\article_models.py:53
+#: .\apps\admin_panel\models\courses_models.py:28
+#: .\apps\admin_panel\models\site_setting_models.py:53
+#: .\apps\admin_panel\models\site_setting_models.py:79
+msgid "Is active"
+msgstr "فعال / غیرفعال"
+
+#: .\apps\admin_panel\models\article_models.py:54
+#: .\apps\admin_panel\models\courses_models.py:224
+msgid "Publish date"
+msgstr "تاریخ انتشار"
+
+#: .\apps\admin_panel\models\article_models.py:55
+#: .\apps\admin_panel\models\courses_models.py:137
+msgid "Visit count"
+msgstr "تعداد بازدید"
+
+#: .\apps\admin_panel\models\article_models.py:56
+#: .\apps\admin_panel\models\courses_models.py:136
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: .\apps\admin_panel\models\article_models.py:57
+msgid "Author"
+msgstr "نویسنده"
+
+#: .\apps\admin_panel\models\article_models.py:58
+msgid "Related articles"
+msgstr "مقالات مرتبط"
+
+#: .\apps\admin_panel\models\article_models.py:60
+msgid "Can add comment"
+msgstr "امکان درج نظر"
+
+#: .\apps\admin_panel\models\article_models.py:71
+#: .\apps\admin_panel\models\article_models.py:80
+#: .\apps\admin_panel\models\article_models.py:116
+#: .\apps\admin_panel\models\article_models.py:139
+msgid "Article"
+msgstr "مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:72
+#: .\apps\site\templates\site\articles\articles_list.html:5
+msgid "Articles"
+msgstr "مقالات"
+
+#: .\apps\admin_panel\models\article_models.py:87
+msgid "Article tag"
+msgstr "تگ مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:88
+msgid "Article tags"
+msgstr "تگ های مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:112
+msgid "Not seen"
+msgstr "دیده نشده"
+
+#: .\apps\admin_panel\models\article_models.py:113
+#: .\apps\admin_panel\models\courses_models.py:326
+msgid "Accepted"
+msgstr "تایید شده"
+
+#: .\apps\admin_panel\models\article_models.py:114
+msgid "Not accepted"
+msgstr "تایید نشده"
+
+#: .\apps\admin_panel\models\article_models.py:117
+#: .\apps\admin_panel\models\ticket_models.py:68
+msgid "Sender"
+msgstr "ارسال کننده"
+
+#: .\apps\admin_panel\models\article_models.py:118
+#: .\apps\admin_panel\models\courses_models.py:332
+msgid "Parent comment"
+msgstr "نظر والد"
+
+#: .\apps\admin_panel\models\article_models.py:120
+msgid "Comment state"
+msgstr "وضعیت نظر"
+
+#: .\apps\admin_panel\models\article_models.py:130
+msgid "Article comment"
+msgstr "نظر مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:131
+msgid "Article comments"
+msgstr "نظرات مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:140
+#: .\apps\admin_panel\models\courses_models.py:296
+msgid "User ip"
+msgstr "آی پی کاربر"
+
+#: .\apps\admin_panel\models\article_models.py:141
+#: .\apps\admin_panel\models\courses_models.py:299
+#: .\apps\admin_panel\models\courses_models.py:330
+#: .\apps\admin_panel\models\courses_models.py:375
+#: .\apps\admin_panel\models\master_models.py:19
+#: .\apps\admin_panel\models\user_models.py:50
+#: .\apps\admin_panel\models\wallet_models.py:80
+msgid "User"
+msgstr "کاربر"
+
+#: .\apps\admin_panel\models\article_models.py:147
+msgid "Article visit"
+msgstr "بازدید مقاله"
+
+#: .\apps\admin_panel\models\article_models.py:148
+msgid "Article visits"
+msgstr "بازدیدهای مقاله"
+
+#: .\apps\admin_panel\models\contact_us_models.py:13
+#: .\apps\site\forms\contact.py:15
+msgid "Fullname"
+msgstr "نام و نام خانوادگی"
+
+#: .\apps\admin_panel\models\contact_us_models.py:14
+#: .\apps\site\forms\contact.py:36
+msgid "Subject"
+msgstr "عنوان"
+
+#: .\apps\admin_panel\models\contact_us_models.py:15
+#: .\apps\site\forms\account.py:14 .\apps\site\forms\account.py:41
+#: .\apps\site\forms\account.py:86 .\apps\site\forms\contact.py:25
+msgid "Email"
+msgstr "ایمیل"
+
+#: .\apps\admin_panel\models\contact_us_models.py:17
+#: .\apps\site\templates\site\articles\article_detail.html:161
+#: .\apps\site\templates\site\courses\course_detail_comments_partial.html:21
+msgid "Answer"
+msgstr "پاسخ"
+
+#: .\apps\admin_panel\models\contact_us_models.py:18
+msgid "Is seen"
+msgstr "دیده شده / نشده"
+
+#: .\apps\admin_panel\models\contact_us_models.py:27
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\apps\admin_panel\models\contact_us_models.py:28
+msgid "Contact Uses"
+msgstr "تماس با ما ها"
+
+#: .\apps\admin_panel\models\courses_models.py:24
+msgid "Icon name"
+msgstr "نام آیکن"
+
+#: .\apps\admin_panel\models\courses_models.py:29
+#: .\apps\admin_panel\models\site_setting_models.py:51
+#: .\apps\site\forms\article.py:10
+msgid "Parent"
+msgstr "والد"
+
+#: .\apps\admin_panel\models\courses_models.py:38
+#: .\apps\site\templates\site\courses\course_detail.html:129
+msgid "Course category"
+msgstr "دسته بندی دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:39
+#: .\apps\site\templates\site\courses\course_list.html:146
+msgid "Course categories"
+msgstr "دسته بندی های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:54
+#: .\apps\admin_panel\models\courses_models.py:178
+#: .\apps\admin_panel\models\courses_models.py:215
+#: .\apps\admin_panel\models\courses_models.py:263
+#: .\apps\admin_panel\models\site_setting_models.py:50
+msgid "Order"
+msgstr "اولیت"
+
+#: .\apps\admin_panel\models\courses_models.py:62
+msgid "Course level"
+msgstr "سطح دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:63
+#: .\apps\admin_panel\models\courses_models.py:135
+#: .\apps\site\templates\site\courses\course_detail.html:397
+#: .\apps\site\templates\site\courses\course_list.html:183
+msgid "Course levels"
+msgstr "سطوح دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:121
+msgid "Preparing"
+msgstr "در حال آماده سازی"
+
+#: .\apps\admin_panel\models\courses_models.py:122
+msgid "On performing"
+msgstr "در حال برگزاری"
+
+#: .\apps\admin_panel\models\courses_models.py:123
+msgid "Finished"
+msgstr "به اتمام رسیده"
+
+#: .\apps\admin_panel\models\courses_models.py:124
+msgid "Has stopped"
+msgstr "متوقف شده"
+
+#: .\apps\admin_panel\models\courses_models.py:127
+msgid "Course slug field"
+msgstr "لینک url دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:128
+msgid "Course hold status"
+msgstr "وضعیت برگزاری"
+
+#: .\apps\admin_panel\models\courses_models.py:130
+#: .\apps\admin_panel\models\wallet_models.py:81
+#: .\apps\site\templates\site\courses\course_detail.html:311
+#: .\apps\user_panel\forms\wallet.py:12
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:89
+msgid "Price"
+msgstr "قیمت"
+
+#: .\apps\admin_panel\models\courses_models.py:133
+msgid "Course main master"
+msgstr "مدرس اصلی دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:134
+msgid "Course other masters"
+msgstr "سایر مدرسین دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:139
+msgid "Can send comment"
+msgstr "امکان درج نظر"
+
+#: .\apps\admin_panel\models\courses_models.py:140
+msgid "Show comments"
+msgstr "نمایش نظرات"
+
+#: .\apps\admin_panel\models\courses_models.py:141
+msgid "Estimated time to complete the course"
+msgstr "زمان تخمینی اتمام دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:143
+msgid "Folder name"
+msgstr "نام پوشه"
+
+#: .\apps\admin_panel\models\courses_models.py:144
+#: .\apps\admin_panel\models\courses_models.py:218
+msgid "Video"
+msgstr "ویدئو"
+
+#: .\apps\admin_panel\models\courses_models.py:152
+#: .\apps\admin_panel\models\courses_models.py:180
+#: .\apps\admin_panel\models\courses_models.py:220
+#: .\apps\admin_panel\models\courses_models.py:242
+#: .\apps\admin_panel\models\courses_models.py:264
+#: .\apps\admin_panel\models\courses_models.py:298
+#: .\apps\admin_panel\models\courses_models.py:331
+#: .\apps\admin_panel\models\courses_models.py:356
+#: .\apps\admin_panel\models\courses_models.py:376
+#: .\apps\site\templates\site\courses\course_detail.html:264
+msgid "Course"
+msgstr "دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:153
+#: .\apps\site\templates\site\courses\course_list.html:5
+#: .\apps\site\templates\site\courses\course_list.html:20
+msgid "Courses"
+msgstr "دوره ها"
+
+#: .\apps\admin_panel\models\courses_models.py:160
+#: .\apps\user_panel\forms\wallet.py:10
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:100
+msgid "Toman"
+msgstr "تومان"
+
+#: .\apps\admin_panel\models\courses_models.py:162
+#: .\apps\site\templates\site\courses\course_detail.html:341
+msgid "Free"
+msgstr "رایگان"
+
+#: .\apps\admin_panel\models\courses_models.py:179
+msgid "Show to user"
+msgstr "نمایش به کاربر"
+
+#: .\apps\admin_panel\models\courses_models.py:188
+#: .\apps\admin_panel\models\courses_models.py:221
+msgid "Course heading"
+msgstr "سرفصل دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:189
+msgid "Course headings"
+msgstr "سرفصل های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:216
+#: .\apps\site\templates\site\courses\course_detail.html:329
+msgid "Duration"
+msgstr "زمان"
+
+#: .\apps\admin_panel\models\courses_models.py:217
+msgid "Is free"
+msgstr "رایگان / غیررایگان"
+
+#: .\apps\admin_panel\models\courses_models.py:219
+msgid "File"
+msgstr "فایل"
+
+#: .\apps\admin_panel\models\courses_models.py:232
+msgid "Course section"
+msgstr "بخش دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:233
+#: .\apps\site\templates\site\courses\course_detail.html:158
+#: .\apps\site\templates\site\courses\course_detail.html:201
+msgid "Course sections"
+msgstr "بخش های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:248
+msgid "Course tag"
+msgstr "تگ دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:249
+msgid "Course tags"
+msgstr "تگ های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:265
+msgid "Course link"
+msgstr "لینک دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:275
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:108
+msgid "Not set"
+msgstr "تنظیم نشده"
+
+#: .\apps\admin_panel\models\courses_models.py:278
+msgid "Course prerequisite"
+msgstr "پیشنیاز دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:279
+#: .\apps\site\templates\site\courses\course_detail.html:181
+msgid "Course prerequisites"
+msgstr "پیشنیاز های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:307
+msgid "Course visit"
+msgstr "بازدید دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:308
+msgid "Course visits"
+msgstr "بازدیدهای دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:327
+msgid "Rejected"
+msgstr "رد شده"
+
+#: .\apps\admin_panel\models\courses_models.py:328
+#: .\apps\admin_panel\models\ticket_models.py:33
+msgid "Under progress"
+msgstr "در حال بررسی"
+
+#: .\apps\admin_panel\models\courses_models.py:336
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:38
+msgid "Status"
+msgstr "وضعیت"
+
+#: .\apps\admin_panel\models\courses_models.py:344
+msgid "Course comment"
+msgstr "نظر دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:345
+msgid "Course comments"
+msgstr "نظرات دوره ها"
+
+#: .\apps\admin_panel\models\courses_models.py:354
+msgid "Value"
+msgstr "مقدار"
+
+#: .\apps\admin_panel\models\courses_models.py:355
+msgid "Icon"
+msgstr "آیکون"
+
+#: .\apps\admin_panel\models\courses_models.py:362
+msgid "Course feature"
+msgstr "ویژگی دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:363
+msgid "Course features"
+msgstr "ویژگی های دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:385
+#, fuzzy
+#| msgid "Register in course"
+msgid "User favorite course"
+msgstr "ثبت نام در دوره"
+
+#: .\apps\admin_panel\models\courses_models.py:386
+#, fuzzy
+#| msgid "Register in course"
+msgid "User favorite courses"
+msgstr "ثبت نام در دوره"
+
+#: .\apps\admin_panel\models\master_models.py:20
+msgid "Show in list"
+msgstr "نمایش در لیست"
+
+#: .\apps\admin_panel\models\master_models.py:22
+msgid "Default share percentage"
+msgstr "درصد سهم پیشفرض"
+
+#: .\apps\admin_panel\models\master_models.py:36
+#: .\apps\site\templates\site\courses\course_detail.html:123
+#: .\apps\site\templates\site\courses\course_detail.html:161
+msgid "Master"
+msgstr "مدرس"
+
+#: .\apps\admin_panel\models\master_models.py:39
+msgid "Course master"
+msgstr "مدرس دوره"
+
+#: .\apps\admin_panel\models\master_models.py:40
+msgid "Course masters"
+msgstr "مدرس های دوره"
+
+#: .\apps\admin_panel\models\site_setting_models.py:11
+msgid "Site name"
+msgstr "نام سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:12
+msgid "Domain name"
+msgstr "آدرس دامنه"
+
+#: .\apps\admin_panel\models\site_setting_models.py:13
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+#: .\apps\admin_panel\models\site_setting_models.py:14
+#: .\apps\admin_panel\models\user_models.py:27
+msgid "Mobile"
+msgstr "تلفن همراه"
+
+#: .\apps\admin_panel\models\site_setting_models.py:15
+#: .\apps\site\templates\site\home\about_us.html:78
+#: .\apps\site\templates\site\home\contact_us.html:127
+msgid "Support email"
+msgstr "ایمیل پشتیبانی"
+
+#: .\apps\admin_panel\models\site_setting_models.py:16
+#: .\apps\site\templates\site\home\about_us.html:66
+#: .\apps\site\templates\site\home\contact_us.html:115
+msgid "Address"
+msgstr "آدرس"
+
+#: .\apps\admin_panel\models\site_setting_models.py:17
+msgid "About us text"
+msgstr "متن درباره ما"
+
+#: .\apps\admin_panel\models\site_setting_models.py:18
+msgid "Copy right"
+msgstr "کپی رایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:19
+msgid "Header logo"
+msgstr "لوگو در هدر سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:20
+msgid "Footer logo"
+msgstr "لوگو در فوتر سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:23
+msgid "Site setting"
+msgstr "تنظیمات سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:24
+msgid "Site settings"
+msgstr "تنظیمات سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:45
+msgid "Site header"
+msgstr "هدر سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:46
+msgid "Site footer"
+msgstr "فوتر سایت"
+
+#: .\apps\admin_panel\models\site_setting_models.py:49
+msgid "Url"
+msgstr "آدرس"
+
+#: .\apps\admin_panel\models\site_setting_models.py:52
+msgid "Position"
+msgstr "جایگاه"
+
+#: .\apps\admin_panel\models\site_setting_models.py:62
+msgid "Dynamic link"
+msgstr "لینک داینامیک"
+
+#: .\apps\admin_panel\models\site_setting_models.py:63
+msgid "Dynamic links"
+msgstr "لینک های داینامیک"
+
+#: .\apps\admin_panel\models\site_setting_models.py:90
+msgid "Dynamic page"
+msgstr "صفحه داینامیک"
+
+#: .\apps\admin_panel\models\site_setting_models.py:91
+msgid "Dynamic pages"
+msgstr "صفحات داینامیک"
+
+#: .\apps\admin_panel\models\ticket_models.py:25
+#: .\apps\user_panel\templates\user_panel\tickets\ticket_detail.html:52
+msgid "Support"
+msgstr "پشتیبان"
+
+#: .\apps\admin_panel\models\ticket_models.py:26
+msgid "Technical"
+msgstr "فنی"
+
+#: .\apps\admin_panel\models\ticket_models.py:27
+msgid "Financial"
+msgstr "مالی"
+
+#: .\apps\admin_panel\models\ticket_models.py:30
+msgid "Answered"
+msgstr "پاسخ داده شده"
+
+#: .\apps\admin_panel\models\ticket_models.py:31
+msgid "Not answered"
+msgstr "پاسخ داده نشده"
+
+#: .\apps\admin_panel\models\ticket_models.py:32
+msgid "Closed"
+msgstr "بسته شده"
+
+#: .\apps\admin_panel\models\ticket_models.py:36
+msgid "Low"
+msgstr "پایین"
+
+#: .\apps\admin_panel\models\ticket_models.py:37
+msgid "Medium"
+msgstr "متوسط"
+
+#: .\apps\admin_panel\models\ticket_models.py:38
+msgid "High"
+msgstr "زیاد"
+
+#: .\apps\admin_panel\models\ticket_models.py:41
+#: .\apps\user_panel\forms\tickets.py:39 .\apps\user_panel\forms\tickets.py:42
+msgid "Ticket section"
+msgstr "واحد پشتیبانی"
+
+#: .\apps\admin_panel\models\ticket_models.py:42
+msgid "Ticket state"
+msgstr "وضعیت تیکت"
+
+#: .\apps\admin_panel\models\ticket_models.py:43
+#: .\apps\user_panel\forms\tickets.py:29 .\apps\user_panel\forms\tickets.py:32
+msgid "Priority"
+msgstr "اولویت"
+
+#: .\apps\admin_panel\models\ticket_models.py:44
+msgid "Owner"
+msgstr "صاحب تیکت"
+
+#: .\apps\admin_panel\models\ticket_models.py:46
+#: .\apps\admin_panel\models\ticket_models.py:72
+msgid "Deleted or not"
+msgstr "حذف شده / نشده"
+
+#: .\apps\admin_panel\models\ticket_models.py:54
+#: .\apps\admin_panel\models\ticket_models.py:69
+msgid "Ticket"
+msgstr "تیکت"
+
+#: .\apps\admin_panel\models\ticket_models.py:55
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:35
+#: .\apps\user_panel\templates\user_panel\tickets\add_ticket.html:10
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:7
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:12
+#: .\apps\user_panel\templates\user_panel\tickets\ticket_detail.html:16
+msgid "Tickets"
+msgstr "تیکت ها"
+
+#: .\apps\admin_panel\models\ticket_models.py:80
+#: .\apps\user_panel\forms\tickets.py:11 .\apps\user_panel\forms\tickets.py:49
+msgid "Ticket message"
+msgstr "پیام تیکت"
+
+#: .\apps\admin_panel\models\ticket_models.py:81
+msgid "Ticket messages"
+msgstr "پیام های تیکت"
+
+#: .\apps\admin_panel\models\user_models.py:28
+msgid "Avatar"
+msgstr "آواتار"
+
+#: .\apps\admin_panel\models\user_models.py:29 .\apps\site\forms\account.py:101
+msgid "Email active code"
+msgstr "کد فعالسازی حساب کاربری"
+
+#: .\apps\admin_panel\models\user_models.py:51
+msgid "Users"
+msgstr "کاربران"
+
+#: .\apps\admin_panel\models\wallet_models.py:61
+msgid "Deposit"
+msgstr "واریز"
+
+#: .\apps\admin_panel\models\wallet_models.py:62
+msgid "Withdrawal"
+msgstr "برداشت"
+
+#: .\apps\admin_panel\models\wallet_models.py:65
+msgid "Online"
+msgstr "آنلاین"
+
+#: .\apps\admin_panel\models\wallet_models.py:66
+msgid "CASH"
+msgstr "نقدی"
+
+#: .\apps\admin_panel\models\wallet_models.py:67
+msgid "Charge by admin"
+msgstr "شارژ حساب توسط ادمین"
+
+#: .\apps\admin_panel\models\wallet_models.py:68
+msgid "Card to card"
+msgstr "کارت به کارت"
+
+#: .\apps\admin_panel\models\wallet_models.py:71
+msgid "Discount"
+msgstr "تخفیف"
+
+#: .\apps\admin_panel\models\wallet_models.py:72
+msgid "Buy course"
+msgstr "خرید دوره"
+
+#: .\apps\admin_panel\models\wallet_models.py:73
+#: .\apps\user_panel\templates\user_panel\wallets\charge_wallet.html:6
+#: .\apps\user_panel\templates\user_panel\wallets\charge_wallet.html:13
+#: .\apps\user_panel\templates\user_panel\wallets\charge_wallet.html:22
+#: .\apps\user_panel\templates\user_panel\wallets\charge_wallet.html:41
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:79
+msgid "Charge wallet"
+msgstr "شارژ کیف پول"
+
+#: .\apps\admin_panel\models\wallet_models.py:74
+msgid "Checkout"
+msgstr "تسویه حساب"
+
+#: .\apps\admin_panel\models\wallet_models.py:75
+msgid "Request certificate"
+msgstr "درخواست مدرک"
+
+#: .\apps\admin_panel\models\wallet_models.py:76
+msgid "Refund"
+msgstr "عودت وجه"
+
+#: .\apps\admin_panel\models\wallet_models.py:77
+msgid "Consult"
+msgstr "مشاوره"
+
+#: .\apps\admin_panel\models\wallet_models.py:78
+msgid "Other"
+msgstr "دیگری"
+
+#: .\apps\admin_panel\models\wallet_models.py:82
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:90
+msgid "Transaction type"
+msgstr "نوع تراکنش"
+
+#: .\apps\admin_panel\models\wallet_models.py:83
+msgid "Transaction way"
+msgstr "روش تراکنش"
+
+#: .\apps\admin_panel\models\wallet_models.py:84
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:91
+msgid "Transaction for"
+msgstr "علت تراکنش"
+
+#: .\apps\admin_panel\models\wallet_models.py:85
+msgid "Is paid"
+msgstr "پرداخت شده / نشده"
+
+#: .\apps\admin_panel\models\wallet_models.py:87
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:92
+msgid "Payment date"
+msgstr "تاریخ پرداخت"
+
+#: .\apps\admin_panel\models\wallet_models.py:89
+msgid "User IP"
+msgstr "آدرس IP  کاربر"
+
+#: .\apps\admin_panel\models\wallet_models.py:90
+msgid "Authority"
+msgstr "کد Authority"
+
+#: .\apps\admin_panel\models\wallet_models.py:91
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:93
+msgid "Tracking code"
+msgstr "کد پیگیری"
+
+#: .\apps\admin_panel\models\wallet_models.py:99
+msgid "User wallet"
+msgstr "کیف پول کاربر"
+
+#: .\apps\admin_panel\models\wallet_models.py:100
+msgid "User wallets"
+msgstr "کیف پول های کاربر"
+
+#: .\apps\admin_panel\templates\admin_panel\home\index_page.html:4
+msgid "Main page"
+msgstr "صفحه اصلی"
+
+#: .\apps\site\forms\account.py:16 .\apps\site\forms\account.py:43
+#: .\apps\site\forms\account.py:88 .\apps\site\forms\contact.py:27
+msgid "Email address is not valid"
+msgstr "ایمیل وارد شده صحیح نمی باشد"
+
+#: .\apps\site\forms\account.py:17 .\apps\site\forms\account.py:27
+#: .\apps\site\forms\account.py:44 .\apps\site\forms\account.py:54
+#: .\apps\site\forms\account.py:64 .\apps\site\forms\account.py:89
+#: .\apps\site\forms\account.py:110 .\apps\site\forms\account.py:120
+#: .\apps\user_panel\forms\account.py:16 .\apps\user_panel\forms\account.py:26
+#: .\apps\user_panel\forms\account.py:36 .\apps\user_panel\forms\account.py:52
+#: .\apps\user_panel\forms\account.py:62
+msgid "This field can not have more than 150 characters"
+msgstr "مقدار وارد شده نمی تواند بیشتر از 150 کاراکتر داشته باشد"
+
+#: .\apps\site\forms\account.py:25 .\apps\site\forms\account.py:52
+#: .\apps\site\forms\account.py:108 .\apps\user_panel\forms\account.py:24
+msgid "Password"
+msgstr "کلمه عبور"
+
+#: .\apps\site\forms\account.py:62 .\apps\site\forms\account.py:118
+#: .\apps\user_panel\forms\account.py:34
+msgid "Confirm password"
+msgstr "تکرار کلمه عبور"
+
+#: .\apps\site\forms\account.py:72 .\apps\site\forms\account.py:128
+msgid "Password and confirm password does not match"
+msgstr "کلمه عبور و تکرار کلمه عبور مغایرت دارند"
+
+#: .\apps\site\forms\contact.py:17 .\apps\site\forms\contact.py:28
+#: .\apps\site\forms\contact.py:38
+msgid "This field can not have more than 200 characters"
+msgstr "مقدار وارد شده نمی تواند بیشتر از 200 کاراکتر داشته باشد"
+
+#: .\apps\site\templates\site\account\forgot_pass.html:6
+#: .\apps\site\templates\site\account\forgot_pass.html:26
+msgid "Forgot password"
+msgstr "بازیابی کلمه عبور"
+
+#: .\apps\site\templates\site\account\forgot_pass.html:45
+msgid "Send reset password email"
+msgstr "ارسال ایمیل بازیابی"
+
+#: .\apps\site\templates\site\account\login.html:6
+#: .\apps\site\templates\site\account\login.html:26
+#: .\apps\site\templates\site\account\login.html:45
+#: .\apps\site\templates\site\components\site_header.html:66
+msgid "Login"
+msgstr "ورود"
+
+#: .\apps\site\templates\site\account\login.html:66
+msgid "Do not have an account?"
+msgstr "حساب کاربری ندارید ؟"
+
+#: .\apps\site\templates\site\account\login.html:68
+msgid "Register now"
+msgstr "همین حالا ثبت نام کنید"
+
+#: .\apps\site\templates\site\account\login.html:71
+msgid "Forgot your password?"
+msgstr "کلمه عبور خود را فراموش کرده اید؟"
+
+#: .\apps\site\templates\site\account\login.html:73
+msgid "Reset your password"
+msgstr "ارسال ایمیل بازیابی"
+
+#: .\apps\site\templates\site\account\register.html:6
+#: .\apps\site\templates\site\account\register.html:44
+#: .\apps\site\templates\site\components\site_header.html:69
+msgid "Register"
+msgstr "ثبت نام"
+
+#: .\apps\site\templates\site\account\register.html:25
+msgid "Create new account"
+msgstr "ایجاد حساب کاربری"
+
+#: .\apps\site\templates\site\account\register.html:65
+msgid "Do you have account?"
+msgstr "آیا حساب کاربری دارید؟"
+
+#: .\apps\site\templates\site\account\register.html:67
+#: .\apps\site\templates\site\account\reset_password.html:69
+msgid "Login now"
+msgstr "وارد سایت شوید"
+
+#: .\apps\site\templates\site\account\reset_password.html:6
+#: .\apps\site\templates\site\account\reset_password.html:25
+#: .\apps\site\templates\site\account\reset_password.html:47
+#: .\apps\site\views\account.py:135
+msgid "Reset password"
+msgstr "بازیابی کلمه عبور"
+
+#: .\apps\site\templates\site\articles\article_detail.html:28
+#: .\apps\site\templates\site\articles\articles_list.html:17
+#: .\apps\site\templates\site\courses\course_list.html:19
+#: .\apps\site\templates\site\home\about_us.html:18
+#: .\apps\site\templates\site\home\contact_us.html:23
+#: .\apps\site\templates\site\home\page.html:17
+#: .\templates\shared\user_layout.html:30
+msgid "Home"
+msgstr "خانه اصلی"
+
+#: .\apps\site\templates\site\articles\article_detail.html:30
+#: .\apps\site\templates\site\articles\articles_list.html:14
+#: .\apps\site\templates\site\articles\articles_list.html:18
+msgid "Articles list"
+msgstr "لیست مقالات"
+
+#: .\apps\site\templates\site\articles\article_detail.html:74
+#: .\apps\site\templates\site\articles\article_detail.html:134
+#: .\apps\site\templates\site\courses\course_detail.html:164
+msgid "Comments"
+msgstr "نظرات"
+
+#: .\apps\site\templates\site\articles\article_detail.html:84
+msgid "Tags"
+msgstr "تگ ها"
+
+#: .\apps\site\templates\site\articles\article_detail.html:94
+msgid "Share"
+msgstr "انتشار"
+
+#: .\apps\site\templates\site\articles\article_detail.html:207
+msgid "Add new comment"
+msgstr "افزودن نظر  جدید"
+
+#: .\apps\site\templates\site\articles\article_detail.html:222
+#: .\apps\user_panel\templates\user_panel\account\change_password.html:38
+#: .\apps\user_panel\templates\user_panel\account\change_user_info.html:37
+#: .\apps\user_panel\templates\user_panel\tickets\add_ticket.html:44
+msgid "Submit"
+msgstr "ثبت اطلاعات"
+
+#: .\apps\site\templates\site\articles\article_detail.html:241
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:74
+msgid "Search"
+msgstr "جستجو"
+
+#: .\apps\site\templates\site\articles\article_detail.html:253
+msgid "Short link"
+msgstr "لینک کوتاه"
+
+#: .\apps\site\templates\site\components\article_most_visit.html:6
+msgid "Most visited articles"
+msgstr "مقالات پربازدید"
+
+#: .\apps\site\templates\site\components\site_footer.html:48
+msgid "Useful links"
+msgstr "لینک های مفید"
+
+#: .\apps\site\templates\site\components\site_header.html:52
+msgid "Super user options"
+msgstr "دسترسی های ادمین"
+
+#: .\apps\site\templates\site\components\site_header.html:55
+msgid "Django admin"
+msgstr "ادمین جنگو"
+
+#: .\apps\site\templates\site\components\site_header.html:56
+msgid "Main admin"
+msgstr "ادمین اصلی سایت"
+
+#: .\apps\site\templates\site\components\site_header.html:57
+msgid "Translator"
+msgstr "مترجم"
+
+#: .\apps\site\templates\site\components\site_header.html:73
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:52
+msgid "Exit"
+msgstr "خروج"
+
+#: .\apps\site\templates\site\components\site_header.html:76
+msgid "User panel"
+msgstr "پنل کاربری"
+
+#: .\apps\site\templates\site\courses\course_detail.html:5
+msgid "Course detail"
+msgstr "جزییات دوره"
+
+#: .\apps\site\templates\site\courses\course_detail.html:37
+#: .\apps\site\templates\site\courses\course_detail.html:75
+msgid "Section"
+msgstr "بخش"
+
+#: .\apps\site\templates\site\courses\course_detail.html:39
+msgid "Student"
+msgstr "دانشجو"
+
+#: .\apps\site\templates\site\courses\course_detail.html:77
+#: .\apps\site\templates\site\courses\course_detail.html:386
+#: .\apps\site\templates\site\courses\course_list.html:256
+msgid "Visit"
+msgstr "بازدید"
+
+#: .\apps\site\templates\site\courses\course_detail.html:84
+#: .\apps\site\templates\site\courses\course_detail.html:350
+msgid "Buy"
+msgstr "خرید"
+
+#: .\apps\site\templates\site\courses\course_detail.html:89
+#: .\apps\site\templates\site\courses\course_detail.html:354
+msgid "Register in course"
+msgstr "ثبت نام در دوره"
+
+#: .\apps\site\templates\site\courses\course_detail.html:155
+#: .\apps\site\templates\site\courses\course_detail.html:384
+msgid "Details"
+msgstr "جزییات"
+
+#: .\apps\site\templates\site\courses\course_detail.html:175
+msgid "Course introduction video"
+msgstr "ویدیو معرفی دوره"
+
+#: .\apps\site\templates\site\courses\course_detail.html:178
+msgid "Course description"
+msgstr "توضیحات دوره"
+
+#: .\apps\site\templates\site\courses\course_detail.html:238
+msgid "There is no section has been recoreded"
+msgstr "در حال حاضر قسمتی ضبط نشده است"
+
+#: .\apps\site\templates\site\courses\course_detail.html:289
+msgid "Send your comment"
+msgstr "نظر خود را ثبت کنید"
+
+#: .\apps\site\templates\site\courses\course_detail.html:296
+msgid "Can not send comment at this time"
+msgstr "متاسفانه در حال حاضر امکان درج نظر وجود ندارد"
+
+#: .\apps\site\templates\site\courses\course_detail.html:316
+msgid "Students"
+msgstr "دانشجوها"
+
+#: .\apps\site\templates\site\courses\course_detail.html:319
+msgid "Master courses count"
+msgstr "تعداد دوره های مدرس"
+
+#: .\apps\site\templates\site\courses\course_detail.html:322
+msgid "Course headings count"
+msgstr "تعداد سرفصل ها"
+
+#: .\apps\site\templates\site\courses\course_detail.html:325
+msgid "Sections count"
+msgstr "تعداد بخش ها"
+
+#: .\apps\site\templates\site\courses\course_detail.html:339
+msgid "Course type"
+msgstr "نوع دوره"
+
+#: .\apps\site\templates\site\courses\course_detail.html:343
+msgid "Cash"
+msgstr "نقدی"
+
+#: .\apps\site\templates\site\courses\course_detail_comments_partial.html:75
+msgid "There is no comment"
+msgstr "هیچ نظری وجود ندارد"
+
+#: .\apps\site\templates\site\courses\course_list.html:16
+msgid "Courses list"
+msgstr "لیست دوره ها"
+
+#: .\apps\site\templates\site\courses\course_list.html:140
+msgid "Search course"
+msgstr "جستجو دوره"
+
+#: .\apps\site\templates\site\courses\course_list.html:211
+msgid "Courses found"
+msgstr "دوره یافت شده"
+
+#: .\apps\site\templates\site\courses\send_course_comment_partial.html:16
+msgid "Submit your comment"
+msgstr "ارسال نظر"
+
+#: .\apps\site\templates\site\home\about_us.html:5
+#: .\apps\site\templates\site\home\about_us.html:15
+#: .\apps\site\templates\site\home\about_us.html:19
+msgid "About us"
+msgstr "درباره ما"
+
+#: .\apps\site\templates\site\home\about_us.html:40
+msgid "Abouts us"
+msgstr "درباره ما"
+
+#: .\apps\site\templates\site\home\about_us.html:54
+#: .\apps\site\templates\site\home\contact_us.html:103
+msgid "Contact ways"
+msgstr "روش های ارتباط با ما"
+
+#: .\apps\site\templates\site\home\about_us.html:90
+#: .\apps\site\templates\site\home\contact_us.html:139
+msgid "Tell"
+msgstr "تلفن"
+
+#: .\apps\site\templates\site\home\contact_us.html:6
+#: .\apps\site\templates\site\home\contact_us.html:20
+#: .\apps\site\templates\site\home\contact_us.html:24
+msgid "Contact us"
+msgstr "تماس با ما"
+
+#: .\apps\site\templates\site\home\contact_us.html:45
+msgid "Contact us form"
+msgstr "فرم تماس با ما"
+
+#: .\apps\site\templates\site\home\index.html:5
+msgid "Home page"
+msgstr "خانه"
+
+#: .\apps\site\views\account.py:42
+msgid "Active account"
+msgstr "فعالسازی حساب کاربری"
+
+#: .\apps\site\views\account.py:46
+msgid "You have successfully registered"
+msgstr "ثبت نام شما با موفقیت انجام شد"
+
+#: .\apps\site\views\account.py:47
+msgid "An email containing an activation link has been sent to you"
+msgstr "یک ایمیل حاوی لینک فعال سازی برای شما ارسال شد"
+
+#: .\apps\site\views\account.py:50
+msgid "This email is used by another user"
+msgstr "کاربری با این ایمیل قبلا ثبت نام کرده است"
+
+#: .\apps\site\views\account.py:79
+msgid "Welcome"
+msgstr "خوش آمدید"
+
+#: .\apps\site\views\account.py:84 .\apps\site\views\account.py:88
+#: .\apps\site\views\account.py:141 .\apps\site\views\account.py:158
+#: .\apps\site\views\account.py:170
+msgid "User not found"
+msgstr "کاربری با مشخصات وارد شده یافت نشد"
+
+#: .\apps\site\views\account.py:86
+msgid "Your account is not activated"
+msgstr "حساب کاربری شما فعال نشده است"
+
+#: .\apps\site\views\account.py:109
+msgid "Your account is successfully activated"
+msgstr "حساب کاربری شما با موفقیت فعال شد"
+
+#: .\apps\site\views\account.py:112 .\apps\site\views\articles.py:33
+#: .\apps\site\views\articles.py:44 .\apps\site\views\articles.py:82
+#: .\apps\site\views\courses.py:47 .\apps\site\views\home.py:71
+#: .\apps\user_panel\templates\user_panel\shared\user_not_fount_partial.html:5
+#: .\apps\user_panel\views\ticket.py:39 .\apps\user_panel\views\ticket.py:65
+#: .\templates\shared\not_found.html:5
+msgid "Information not found"
+msgstr "هیچ اطلاعاتی یافت نشد"
+
+#: .\apps\site\views\account.py:175
+msgid "Your password has been changed successfully"
+msgstr "کلمه عبور شما با موفقیت تغییر یافت"
+
+#: .\apps\site\views\articles.py:78
+msgid "Your comment will be displayed after review"
+msgstr "نظر شما بعد از بررسی نمایش داده خواهد شد"
+
+#: .\apps\site\views\articles.py:80
+msgid "Can not add comment for this article"
+msgstr "متاسفانه امکان درج کامنت برای این مقاله وجود ندارد"
+
+#: .\apps\site\views\articles.py:84
+msgid "Please enter comment text"
+msgstr "لطفا متن نظر خود را وارد کنید"
+
+#: .\apps\site\views\courses.py:84
+msgid ""
+"Your comment has been sent successfully and will be shown after studying"
+msgstr "نظر شما با موفقیت ثبت شد و پس از بررسی در سایت نمایش داده خواهد شد"
+
+#: .\apps\site\views\courses.py:86
+msgid "You should login first"
+msgstr "ابتدا باید وارد سایت شوید"
+
+#: .\apps\site\views\courses.py:88
+msgid "Can not send comment for this course"
+msgstr "امکان درج نظر برای این دوره وجود ندارد"
+
+#: .\apps\site\views\courses.py:90
+msgid "Not found"
+msgstr "یافت نشد"
+
+#: .\apps\site\views\courses.py:92
+msgid "Please enter your comment"
+msgstr "لطفا نظر خود را وارد کنید"
+
+#: .\apps\site\views\home.py:41 .\apps\user_panel\views\ticket.py:63
+msgid "Your message has been send successfully"
+msgstr "پیغام شما با موفقیت ارسال شد"
+
+#: .\apps\site\views\home.py:44 .\apps\user_panel\views\account.py:78
+#: .\apps\user_panel\views\wallet.py:60
+msgid "An error occurred"
+msgstr "خطایی رخ داد"
+
+#: .\apps\user_panel\forms\account.py:14
+msgid "Current password"
+msgstr "کلمه عبور فعلی"
+
+#: .\apps\user_panel\forms\account.py:50
+msgid "First name"
+msgstr "نام"
+
+#: .\apps\user_panel\forms\account.py:60
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+#: .\apps\user_panel\templates\user_panel\account\change_password.html:5
+#: .\apps\user_panel\templates\user_panel\account\change_password.html:9
+#: .\apps\user_panel\templates\user_panel\account\change_password.html:19
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:24
+msgid "Change password"
+msgstr "تغییر کلمه عبور"
+
+#: .\apps\user_panel\templates\user_panel\account\change_user_info.html:5
+#: .\apps\user_panel\templates\user_panel\account\change_user_info.html:9
+#: .\apps\user_panel\templates\user_panel\account\change_user_info.html:18
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:29
+msgid "Change user info"
+msgstr "تغییر اطلاعات پروفایل"
+
+#: .\apps\user_panel\templates\user_panel\account\index.html:5
+msgid "User dashboard"
+msgstr "پنل کاربری"
+
+#: .\apps\user_panel\templates\user_panel\account\index.html:9
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:19
+msgid "Dashboard"
+msgstr "پنل کاربری"
+
+#: .\apps\user_panel\templates\user_panel\account\index.html:21
+msgid "Tickets count"
+msgstr "تعداد تیکت ها"
+
+#: .\apps\user_panel\templates\user_panel\account\index.html:31
+msgid "Transactions count"
+msgstr "تعداد تراکنش ها"
+
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:40
+msgid "Tickets list"
+msgstr "لیست تیکت ها"
+
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:43
+#: .\apps\user_panel\templates\user_panel\tickets\add_ticket.html:5
+#: .\apps\user_panel\templates\user_panel\tickets\add_ticket.html:12
+#: .\apps\user_panel\templates\user_panel\tickets\add_ticket.html:25
+msgid "Add new ticket"
+msgstr "افزودن تیکت جدید"
+
+#: .\apps\user_panel\templates\user_panel\components\user_side_bar.html:49
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:8
+msgid "My wallet"
+msgstr "کیف پول من"
+
+#: .\apps\user_panel\templates\user_panel\shared\user_paging_partial.html:6
+#: .\apps\user_panel\templates\user_panel\shared\user_paging_partial.html:8
+#: .\templates\shared\paging_partial.html:6
+#: .\templates\shared\paging_partial.html:8
+msgid "Prev"
+msgstr "قبلی"
+
+#: .\apps\user_panel\templates\user_panel\shared\user_paging_partial.html:18
+#: .\apps\user_panel\templates\user_panel\shared\user_paging_partial.html:20
+#: .\templates\shared\paging_partial.html:18
+#: .\templates\shared\paging_partial.html:20
+msgid "Next"
+msgstr "بعدی"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:14
+msgid "User tickets"
+msgstr "تیکت های کاربر"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:26
+msgid "All tickets list"
+msgstr "لیست تمامی تیکت ها"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:35
+msgid "Code"
+msgstr "کد"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:37
+msgid "Create data"
+msgstr "تاریخ ایجاد"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:39
+msgid "Operations"
+msgstr "عملیات"
+
+#: .\apps\user_panel\templates\user_panel\tickets\all_tickets.html:57
+msgid "Show Detail"
+msgstr "نمایش جزییات"
+
+#: .\apps\user_panel\templates\user_panel\tickets\ticket_detail.html:6
+#: .\apps\user_panel\templates\user_panel\tickets\ticket_detail.html:18
+msgid "Ticket detail"
+msgstr "جزییات تیکت"
+
+#: .\apps\user_panel\templates\user_panel\tickets\ticket_detail.html:36
+msgid "Send"
+msgstr "ارسال"
+
+#: .\apps\user_panel\templates\user_panel\wallets\charge_wallet.html:11
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:21
+msgid "Wallet"
+msgstr "کیف پول"
+
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:23
+msgid "My wallet transactions"
+msgstr "تراکنش های کیف پول من"
+
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:32
+msgid "All transactions list"
+msgstr "لیست تمامی تراکنش ها"
+
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:43
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:44
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:58
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:59
+msgid "Start date"
+msgstr "تاریخ شروع"
+
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:49
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:50
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:64
+#: .\apps\user_panel\templates\user_panel\wallets\user_wallets.html:65
+msgid "End date"
+msgstr "تاریخ پایان"
+
+#: .\apps\user_panel\views\account.py:46
+msgid "Your password has been successfully edited"
+msgstr "کلمه عبور شما با موفقیت تغییر یافت"
+
+#: .\apps\user_panel\views\account.py:49
+msgid "Your current password is incorrect"
+msgstr "کلمه عبور فعلی شما صحیح نمی باشد"
+
+#: .\apps\user_panel\views\account.py:76
+msgid "Your information has been successfully edited"
+msgstr "ویرایش اطلاعات با موفقیت انجام شد"
+
+#: .\apps\user_panel\views\ticket.py:67
+msgid "Please enter message text"
+msgstr "لطفا پیام خود را وارد کنید"
+
+#: .\apps\user_panel\views\ticket.py:102
+msgid "Your ticket submitted successfully"
+msgstr "پیغام شما با موفقیت ارسال شد"
+
+#: .\apps\user_panel\views\wallet.py:56
+msgid "Your wallet has been charged"
+msgstr "کیف پول شما شارژ شد"
+
+#: .\templates\emails\register.html:4
+msgid ""
+"Your registration was successful. Click on the link below to activate your "
+"account"
+msgstr ""
+"ثبت نام شما با موفقیت انجام شد. برای فعالسازی حساب کاربری خود روی لینک زیر "
+"کلیک کنید"
+
+#: .\templates\emails\register.html:8
+msgid "Activate account"
+msgstr "فعالسازی حساب کاربری"
+
+#: .\templates\emails\reset_pass.html:4
+msgid "To recover your password, click on the link below"
+msgstr "برای بازیابی کلمه عبور خود، روی لینک زیر کلیک کنید"
+
+#: .\templates\emails\reset_pass.html:8
+msgid "Recover password"
+msgstr "بازیابی کلمه عبور"
+
+#: .\utilities\templatetags\time_filter.py:23
+msgid "hours"
+msgstr "ساعت"
+
+#: .\utilities\templatetags\time_filter.py:23
+msgid "and"
+msgstr "و"
+
+#: .\utilities\templatetags\time_filter.py:23
+msgid "minutes"
+msgstr "دقیقه"
+
+#~ msgid "Score"
+#~ msgstr "امتیاز"
+
+#~ msgid "Admin"
+#~ msgstr "ادمین"
+
+#~ msgid "seconds partial"
+#~ msgstr "متن پیام تستی"
+
+#~ msgid "Has been paid"
+#~ msgstr "پرداخت شده"
+
+#~ msgid "Is not paid"
+#~ msgstr "پرداخت نشده"
+
+#~ msgid "Course section categories"
+#~ msgstr "سرفصل های دوره"
+
+#~ msgid "Course Sections"
+#~ msgstr "بخش های دوره"
+
+#~ msgid "Data is not valid"
+#~ msgstr "اطلاعات وارد شده صحیح نمی باشد"
+
+#~ msgid "User register date"
+#~ msgstr "تاریخ ثبت نام کاربر"
+
+#, fuzzy
+#~ msgid "Chagne password"
+#~ msgstr "کلمه عبور"
+
+#~ msgid "Login not"
+#~ msgstr "وارد شوید"
+
+#~ msgid "Manage site setting"
+#~ msgstr "مدیریت تنظیمات سایت"
+
+#~ msgid "This field can not have more than %(max)s characters"
+#~ msgstr "مقدار وارد شده نمی تواند بیشتر از %(max)s کاراکتر داشته باشد"
+
+#~ msgid "user not found"
+#~ msgstr "کاربری با مشخصات وارد شده یافت نشد"

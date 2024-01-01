@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html direction="rtl" dir="rtl" style="direction: rtl">
+<head>
+    <base href="">
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% include 'admin_panel/shared/admin_header_references.html' %}
+</head>
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+<div class="d-flex flex-column flex-root">
+    <div class="page d-flex flex-row flex-column-fluid">
+        {% include 'admin_panel/components/admin_sidebar_menu.html' %}
+        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            {% include 'admin_panel/components/admin_header.html' %}
+            {% block content %}{% endblock %}
+            {% include 'admin_panel/components/admin_footer.html' %}
+        </div>
+    </div>
+</div>
+{% include 'admin_panel/components/admin_activities.html' %}
+{% include 'admin_panel/components/admin_chats.html' %}
+{% include 'admin_panel/shared/scroll_top_partial.html' %}
+{% include 'admin_panel/components/admin_modals.html' %}
+{% include 'admin_panel/shared/admin_footer_references.html' %}
+</body>
+</html>

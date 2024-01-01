@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load jalali_date_filter %}
+
+<!-- Trending Posts -->
+<div class="single_widgets widget_thumb_post">
+    <h4 class="title">{% trans 'Most visited articles' %}</h4>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <span class="left">
+                    <img src="{{ article.image.url }}" alt="" class="">
+                </span>
+                <span class="right">
+                    <a class="feed-title" href="{{ article.get_article_detail_url }}">{{ article.title }}</a>
+                    <span class="post-date">
+                        <i class="ti-calendar"></i>
+                        {{ article.publish_date|show_jalali_date }}
+                    </span>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

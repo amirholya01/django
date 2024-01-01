@@ -1,0 +1,69 @@
+{% extends 'shared/layout.html' %}
+{% load i18n thumbnail %}
+
+{% block title %}
+    {% trans 'Articles' %}
+{% endblock %}
+
+{% block content %}
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="breadcrumbs-wrap">
+                        <h1 class="breadcrumb-title">{% trans 'Articles list' %}</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% trans 'Articles list' %}</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <form action="{% url 'articles_list_page' %}" method="get" id="filter-form">
+        <input type="hidden" id="page-number" name="page" value="{{ page_obj.number }}">
+        <section class="pt-0">
+            <div class="container">
+
+                <div class="row">
+
+                    {% for article in article_list %}
+                        <!-- Single Article -->
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <div class="articles_grid_style">
+                                <div class="articles_grid_thumb">
+                                    <a href="{{ article.get_article_detail_url }}">
+                                        {% thumbnail article.image "626x417" crop="center" as im %}
+                                            <img src="{{ im.url }}" width="{{ im.width }}"
+                                                 height="{{ im.height }}" class="img-fluid"
+                                                 alt="{{ article.title }}">
+                                        {% endthumbnail %}
+
+                                    </a>
+                                </div>
+
+                                <div class="articles_grid_caption">
+                                    <h4>{{ article.title }}</h4>
+                                    <div class="articles_grid_author">
+                                        <div class="articles_grid_author_img">
+                                            <img src="{{ article.author.get_user_avatar }}"
+                                                 class="img-fluid" alt=""></div>
+                                        <h4>{{ article.author.get_full_name }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+                <div class="clearfix"></div>
+                {% include 'shared/paging_partial.html' with paginator=paginator page_obj=page_obj %}
+
+            </div>
+        </section>
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<ul class="pagination">
+    <li class="prev {% if page_obj.has_previous %}disabled{% endif %}">
+        {% if page_obj.has_previous %}
+            <a onclick="FillPageNumber({{ page_obj.previous_page_number }})">{% trans 'Prev' %}</a>
+        {% else %}
+            <a>{% trans 'Prev' %}</a>
+        {% endif %}
+    </li>
+    {% for page in paginator.page_range %}
+        <li class="{% if page_obj.number == page %}active{% endif %}">
+            <a onclick="FillPageNumber({{ page }})">{{ page }}</a>
+        </li>
+    {% endfor %}
+    <li class="next {% if page_obj.has_next %}disable{% endif %}">
+        {% if page_obj.has_next %}
+            <a onclick="FillPageNumber({{ page_obj.next_page_number }})">{% trans 'Next' %}</a>
+        {% else %}
+            <a>{% trans 'Next' %}</a>
+        {% endif %}
+    </li>
+</ul>

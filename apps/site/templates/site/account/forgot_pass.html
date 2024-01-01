@@ -1,0 +1,72 @@
+{% extends 'shared/auth_layout.html' %}
+{% load i18n %}
+{% load render_partial %}
+
+{% block title %}
+    {% trans 'Forgot password' %}
+{% endblock %}
+
+{% block content %}
+    <section class="log-space">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-md-11">
+
+                    <div class="row no-gutters position-relative log_rads">
+                        {% render_partial 'apps.site.views.components.auth_description' %}
+
+                        <div class="col-lg-6 col-md-7 position-static p-4">
+                            <div class="log_wraps">
+                                <a href="index.html" class="log-logo_head">
+                                    <img src="/static/site/rtl/img/logo.png"
+                                         class="img-fluid" width="80"
+                                         alt=""/></a>
+                                <div class="log__heads">
+                                    <h4 class="mt-0 logs_title"><span
+                                            class="theme-cl">{% trans 'Forgot password' %}</span></h4>
+                                </div>
+
+                                <form action="{% url 'forgot_password_page' %}" method="post">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                            {{ field.label_tag }}
+                                            {{ field }}
+                                        </div>
+
+                                        {% for error in field.errors %}
+                                            <p class="text-danger">{{ error }}</p>
+                                        {% endfor %}
+                                    {% endfor %}
+
+
+                                    <div class="form-group">
+                                        <button type="submit"
+                                                class="btn btn_apply btn-success w-100">{% trans 'Send reset password email' %}</button>
+                                    </div>
+                                </form>
+
+                                {% comment %} <div class="form-group text-center">
+                                    <span>یا ثبت نام با</span>
+                                </div>
+
+                                <div class="social_logs">
+                                    <ul>
+                                        <li class="fb-login"><a href="#"><img src="/static/site/img/google.svg"
+                                                                              class="img-fluid ml-2" width="15" alt=""/>Google</a>
+                                        </li>
+                                        <li class="gp-login"><a href="#"><img src="/static/site/img/facebook.svg"
+                                                                              class="img-fluid ml-2" width="15" alt=""/>Facebook</a>
+                                        </li>
+                                    </ul>
+                                </div>{% endcomment %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

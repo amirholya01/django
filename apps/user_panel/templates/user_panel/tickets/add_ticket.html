@@ -1,0 +1,54 @@
+{% extends 'shared/user_layout.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Add new ticket' %}
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'tickets_page' %}">{% trans 'Tickets' %}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans 'Add new ticket' %}</li>
+{% endblock %}
+
+{% block footer_references %}
+    {% include 'shared/ckeditor_scripts.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="dashboard_container">
+                <div class="dashboard_container_header">
+                    <div class="dashboard_fl_1">
+                        <h4>{% trans 'Add new ticket' %}</h4>
+                    </div>
+                </div>
+                <div class="dashboard_container_body p-4">
+                    <form action="{% url 'add_new_ticket_page' %}" method="post">
+                        {% csrf_token %}
+                        <div class="submit-section">
+                            <div class="form-row">
+                                {% for field in form %}
+                                    <div class="form-group col-md-12">
+                                        {{ field.label_tag }}
+                                        {{ field }}
+                                        {% for error in field.errors %}
+                                            <p class="text-danger">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-success">{% trans 'Submit' %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

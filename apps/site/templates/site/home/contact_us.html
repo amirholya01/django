@@ -1,0 +1,157 @@
+{% extends 'shared/layout.html' %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans 'Contact us' %}
+{% endblock %}
+
+{% block footer_references %}
+    {% include 'shared/ckeditor_scripts.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <div class="breadcrumbs-wrap">
+                        <h1 class="breadcrumb-title">{% trans 'Contact us' %}</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% trans 'Contact us' %}</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+
+        <div class="container">
+
+            <!-- row Start -->
+            <div class="row">
+
+                <div class="col-lg-8 col-md-7">
+                    <div class="prc_wrap">
+
+                        <div class="prc_wrap_header">
+                            <h4 class="property_block_title">{% trans 'Contact us form' %}</h4>
+                        </div>
+
+                        <form action="{% url 'contact_us_page' %}" method="post">
+                            {% csrf_token %}
+                            <div class="prc_wrap-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            {{ form.full_name.label_tag }}
+                                            {{ form.full_name }}
+                                            {% for error in form.full_name.errors %}
+                                                <p class="text-danger">{{ error }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            {{ form.email.label_tag }}
+                                            {{ form.email }}
+                                            {% for error in form.email.errors %}
+                                                <p class="text-danger">{{ error }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.subject.label_tag }}
+                                    {{ form.subject }}
+                                    {% for error in form.subject.errors %}
+                                        <p class="text-danger">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.text.label_tag }}
+                                    {{ form.text }}
+                                    {% for error in form.text.errors %}
+                                        <p class="text-danger">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-theme" type="submit">ارسال درخواست</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-5">
+
+                    <div class="prc_wrap">
+
+                        <div class="prc_wrap_header">
+                            <h4 class="property_block_title">{% trans 'Contact ways' %}</h4>
+                        </div>
+
+                        <div class="prc_wrap-body">
+                            <div class="contact-info">
+
+                                {% if site_setting.address %}
+                                    <div class="cn-info-detail">
+                                        <div class="cn-info-icon">
+                                            <i class="ti-home"></i>
+                                        </div>
+                                        <div class="cn-info-content">
+                                            <h4 class="cn-info-title">{% trans 'Address' %}</h4>
+                                            {{ site_setting.address|safe }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if site_setting.support_email %}
+                                    <div class="cn-info-detail">
+                                        <div class="cn-info-icon">
+                                            <i class="ti-email"></i>
+                                        </div>
+                                        <div class="cn-info-content">
+                                            <h4 class="cn-info-title">{% trans 'Support email' %}</h4>
+                                            {{ site_setting.support_email }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if site_setting.tell %}
+                                    <div class="cn-info-detail">
+                                        <div class="cn-info-icon">
+                                            <i class="ti-mobile"></i>
+                                        </div>
+                                        <div class="cn-info-content">
+                                            <h4 class="cn-info-title">{% trans 'Tell' %}</h4>
+                                            {{ site_setting.tell }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /row -->
+
+        </div>
+
+    </section>
+{% endblock %}

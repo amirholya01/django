@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<p>
+    {% trans 'To recover your password, click on the link below' %}
+</p>
+<p>
+    <a href="{{ site_setting.domain_name }}{% url 'reset_password_page' email_active_code=user.email_active_code %}">
+        {% trans 'Recover password' %}
+    </a>
+</p>

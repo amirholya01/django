@@ -1,0 +1,24 @@
+{% load i18n %}
+{% get_current_language as CURRENT_LANG %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content=""/>
+    <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'shared/header_references.html' %}
+</head>
+<body class="log-bg rtl">
+<div id="preloader">
+    <div class="preloader"><span></span><span></span></div>
+</div>
+<div id="main-wrapper">
+    {% block content %}{% endblock %}
+</div>
+{% include 'shared/footer_references.html' %}
+{% include 'shared/site_messages.html' %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load render_partial %}
+{% load i18n %}
+{% get_current_language as CurrentLanguage %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'shared/header_references.html' %}
+    {% block header_references %}{% endblock %}
+</head>
+
+<body class="red-skin {% block body_class %}{% endblock %} {% if CurrentLanguage != 'en' %}rtl{% endif %}">
+<div id="preloader">
+    <div class="preloader"><span></span><span></span></div>
+</div>
+<div id="main-wrapper">
+    {% render_partial 'apps.site.views.components.site_header' %}
+    {% block content %}{% endblock %}
+    {% render_partial 'apps.site.views.components.site_footer' %}
+    <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+</div>
+{% include 'shared/footer_references.html' %}
+{% block footer_references %}{% endblock %}
+{% include 'shared/site_messages.html' %}
+</body>
+</html>
